@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+
+
+</head>
+<body>
+  <div class="page">
+
+<center>  
+<h1> FIT3179-Assignment-2 </h1>
+<h2> By Yangyi Li </h2>
+<h2> 30359732 </h2>
+<center>
+
+
+<div class = "description" >
+<img src="data/economic-development.jpg" width="860" height="480">
+<p style = "text-align:justify;" >
+  According to the data released by the Australian Bureau of Statistics (ABS), Australian GDP increased by 3.4 per cent over  
+  the last financial years. this stable growth was mainly driven by substantial demand for its products, especially with China
+  leading the way. we aims to find Australian primary export partners on the global stage and the key products, 
+  finally, the distribution of resources of product will be investigated and maped to reveal its privileged position.     
+</p>
+</div>
+
+<center> 
+<h2 style="text-align:center; font-size: 30px; background-color:#9db1ca; height: 40px;">Australian Export in 2022</h2>
+<div class = "description" >
+  <p style = "text-align: left;" >
+    Australian main export countries are <b>China</b>, <b>Japan</b>, <b>Korea</b> and <b>United States</b>. Given that Australia is located in the continent in 
+    the south pacific, the main trading partners are within the <b>Asian market</b>. especially China which account for the majority of Australian export destination 
+    and account for $85 Billian for its revernue.
+      </p>
+  </div>
+<div id="ausExport2022"> </div>
+<center> 
+
+
+<center>   
+<h2 style="text-align:center; font-size: 30px; background-color:#9db1ca; height: 40px;">Australian Main Trading Partners</h2>
+<div class = "description" >
+  <p style = "text-align: left;" >
+    from 2009, <b>China</b> has overtaken Japan as Australia's <b>largest destination</b> for exports, from 2003 to 2020, China has experienced
+    resource-intensive burst growth and Australia become its principal supplier especially in the mineral industry.By contrast, Australia's second-largest trading partner, Japan, 
+    accounting for around 15 percent of Australia's total exports of goods, the main export products including <b>natural gas, coal, iron ore beef and aluminium</b>.
+    
+      </p>
+  </div>
+<div id="tradingPartners"></div>
+<center> 
+
+
+
+<center>   
+<h2 style="text-align:center; font-size: 30px; background-color:#9db1ca; height: 40px;">Top-10 Export Products</h2>
+<div class = "description" >
+  <p style = "text-align: left;" >
+    As the radial plot shows below, <b>Mineral fules</b>, especially oil is the main product that Australia exported in 2022, which account for <b>39.6</b> percent
+    of the total export product, followed by <b>Ore slag and ash</b> (25.6 percent), <b>Gems</b> and <b>precious metals</b> (4.8). it is important to note that mineral resources is the fundamental industry to australia,
+    account for more than half of its overall export products and booming Australian Economic growth. for example, some main mining jurisdictions shows a high level of investment attractiveness, including solid infrastructure, stellar economic environment and government 
+    support.
+    
+      </p>
+  </div>
+<div id="TopExportProducts"></div>
+<center> 
+
+
+<center>   
+<h2 style="text-align:center; font-size: 30px; background-color:#9db1ca; height: 40px;">Australian mineral resource distribution</h2>
+<div class = "description" >
+  <p style = "text-align: left;" >
+    To furtuer investigate the resources distribution in Australia, we make a plot that shows the general mineral resources distribution across the map.
+    there are three mineral categories, maintenance, developing and  operation. 
+    
+      </p>
+  </div>
+<div id= "AusMinedistribution"></div>
+<center> 
+
+
+
+<center>   
+<h2 style="text-align:center; font-size: 30px; background-color:#9db1ca; height: 40px;">Mineral resources & States </h2>
+<div class = "description" >
+  <p style = "text-align: left;" >
+    The state of <b>Western australia</b> has the most number of mineral companies with the number of <b>222</b>.followed by the state of <b>Quesland</b> (107) and <b>Newsales wales</b> (81).
+    it is notable that Western australia is the resources export hub of australia, the mineral sector produces more than 50 different minerals from about 125 operating projects and 
+    ranked in the top five in share of the world's total production.
+    
+      </p>
+  </div>
+<div id= "StateMineral"></div>
+<center> 
+
+
+<center>   
+<h2 style="text-align:center; font-size: 30px; background-color:#9db1ca; height: 40px;"> Conclusion </h2>
+<div class = "description" >
+  <p style = "text-align: left;" >
+    In this assignment, we firstly investigate the Australian export value across the world. by analysing the trendency of export volumn from 2000 to 2019,
+    China, Japan and Korea are the main trading countries, in addition, Asian area is the main trading market to australia, which account for more than half of its total export values.
+    secondly, the main trading products was displayed, mineral resources especially iron are the main product to export. with the australian mineral companies' distribution map,
+    we can say that Western australia plays the most significant role in Australian Export.
+    
+      </p>
+  </div>
+<img src="data/mineral.jpg" width="860" height="480">
+<center> 
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+var spec2 = "js/ausExport2022.vg.json";
+vegaEmbed('#ausExport2022', spec2).then(function(result) {
+  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+var spec2 = "js/mainPartners.vg.json";
+vegaEmbed('#tradingPartners', spec2).then(function(result) {
+ // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+var spec2 = "js/topExportProduct.vg.json";
+vegaEmbed('#TopExportProducts', spec2).then(function(result) {
+ // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+var spec2 = "js/mineDistribution.vg.json";
+vegaEmbed('#AusMinedistribution', spec2).then(function(result) {
+ // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+var spec2 = "js/StateMineral.vg.json";
+vegaEmbed('#StateMineral', spec2).then(function(result) {
+ // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+</script>
+</body>
+</html>
