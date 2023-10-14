@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background":"#c7cfdb",
+    "width": 720,
+    "height":400,
+    "projection": {"type": "mercator"},
+    "data": {
+      "url":"js/STE_2016_AUST.topojson",
+      "format": {"type": "topojson", "feature": "STE_2016_AUST"}
+      },
+      
+  
+      "layer": [
+
+      {"transform": [
+        {
+          "lookup": "properties.STE_NAME16",
+          "from": {
+            "data": {
+              "url": "data/MineResources.csv"
+            },
+            "key": "State",
+            "fields": ["Name", "State","Status"]
+          }
+        }
+  
+      ],
+      "mark":{"type": "geoshape", "fill":"lightgray","stroke": "white"},
+      "encoding": {
+      "tooltip":[
+        {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"}]
+      } },
+
+      {
+        "data": {
+            "url": "data/MineResources.csv"
+          },
+          "projection": {
+            "type": "mercator"
+          },
+          "mark": "circle",
+          "encoding": {
+            "longitude": {
+              "field": "Longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "Latitude",
+              "type": "quantitative"
+            },
+            "size": {"value": 25},
+            "color": {"field": "Status", 
+                      "type": "nominal",
+                      "scale":{"range":["#87bc4c", "#690828","#d8537c"]},
+            "legend":{"labelFontSize":12,"titleColor":"#3fb2e8", "labelColor":"#3fb2e8"}},
+            
+            "tooltip":[
+          {"field": "Name", "type": "nominal", "title": "Company Name"},
+          {"field": "Status", "type": "nominal", "title": "Company Status"}
+            ]
+          }
+        }
+      ]}

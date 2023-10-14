@@ -1,0 +1,50 @@
+h1{
+    color:#5c8cd0;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+h2{
+    color:#5a8bca;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+h3{
+  color:rgb(81, 135, 180);
+  font-family:'Times New Roman', Times, serif;
+  font-size: 25px;
+}
+p{
+    color:#5578a9;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+body {
+    background-color: #e2e4ec;
+  }
+
+  .vega {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .page {
+    width: 900px;
+    background-color: #dde0e9;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+  }
+  .description {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-right:20px;
+  }
+  .outer{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+    padding-left: 40px;
+    padding-right:40px;
+    
+  }

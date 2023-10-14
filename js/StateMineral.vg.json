@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "Mineral companies in each state ",
+                "anchor": "middle",
+                "color":"#72a5e8",
+                "fontSize":25},
+    "background": "#abbcd1",
+    "width":720,
+    "height":400,
+    "data": {
+      "url": "data/MineResources.csv"
+    },
+    "transform": [
+      {
+        "aggregate": [
+          {"op": "count", "as": "NameCount"}  
+        ],
+        "groupby": ["State"]
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "State",
+        "type": "ordinal",
+        "title": "State"
+      },
+      "y": {
+        "field": "NameCount",
+        "type": "quantitative",
+        "title": "Number of Mineral companies"
+      },
+      "tooltip": [
+        {"field": "State", "title": "State"},
+        {"field": "NameCount", "title": "Count of Names"}
+      ]
+    }
+  }

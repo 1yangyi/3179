@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "title": {"text": "Australian main export products",
+  "anchor": "middle",
+  "color":"#74a8ec",
+  "fontStyle":"italic",
+  "fontSize":15},
+  "background":"#b8cae1",
+  "data": {
+    "url": "data/Top_10_export_product.csv"},
+
+  "encoding": {
+        "theta": {"field": "Value", "type": "quantitative", "stack":true},
+        "color": {"field": "Category", 
+                  "type": "nominal",
+                  "legend":{"labelLimit":400, 
+                  "labelFontSize":15,"offset":50, 
+                  "titleColor":"#2776de", "labelColor":"#5792df"}},
+        "tooltip": [
+          {"field": "Category", "type": "nominal", "title":"Category of the Product"},
+          {"field": "Value", "type": "nominal", "title": "Product Value ($Billion)"},
+          {"field": "Percent", "type": "nominal", "title": "Percentage"}]
+          
+      } ,
+  
+  "layer": [
+  { "mark": { "type": "arc", "innerRadius": 150, "outerRadius": 200 } },
+  {
+    "mark": { "type": "text", "align": "center", "baseline": "middle", "fontSize": 20, "color": "black" },
+    "encoding": { "text": { "value": "Total 338.4 billion" } }
+  }
+]
+
+
+}
+

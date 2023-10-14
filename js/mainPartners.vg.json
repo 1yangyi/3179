@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "Australia main trading partners ",
+              "anchor": "middle",
+            "color":"#b8cae1",
+          "fontSize":25},
+    "background": "#b8cae1",
+    "data": {"url": "data/tradingPartners.csv"},
+    "width":720,
+    "height":400,
+    "selection": {
+        "tradingPartner": {
+        "type": "multi",
+        "fields": ["Values"],
+        "bind": "legend"
+        }
+        },
+      "params": [
+        {"name": "Country_selection",
+         "bind": {
+           "input": "select",
+           "options": [
+             null,
+             "China",
+              "Japan",
+              "United Kingdom",
+              "United States",
+              "New Zealand"
+            ],
+  
+            "labels": [
+            "Show All",
+            "China",
+            "Japan",
+            "United Kingdom",
+            "United States",
+            "New Zealand"
+            ],
+            "name": "Select Country: "
+         }  
+        }
+      ],
+      "transform": [
+        {"filter": "Country_selection == null || datum.Country == Country_selection"}
+      ],
+    "mark": {
+      "type": "line",
+      "point": {
+        "filled": false,
+        "fill": "white"
+      }
+    },
+    "encoding": {
+      "x": {"field": "Year","type": "ordinal", "axis":{"labelAngle":0}},
+      "y": {"field": "Export Value", "type": "quantitative","title":"Export values ($m)"},
+      "color": {"field": "Country", "type": "nominal", "title": "Countries", "scale": {"range": ["#85AEFF", "#FFAE5D", "#2f4f4f", "#97E7E5", "#ffd700"]}},
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Export Value", "type": "quantitative","title":"Export values ($m)","format": ".2f"}
+        ]
+    },
+    "title": "Values that Australia export"
+  }
